@@ -1,0 +1,28 @@
+* { text-align: center; }
+body { background-color: palevioletred; }
+
+header { color: white }
+h1 { padding-top: 2%; }
+h1:hover{ color: black; }
+
+.p-text-header {
+    font-size: 20px;
+    text-align: justify;
+    margin-left: 44%;
+    font-weight: bold;
+}
+
+.p-text {
+    font-size: 20px;
+    text-align: justify;
+    margin-left: 35%;
+    font-weight: bold;
+}
+
+img { width: 20%; }
+
+#phr_nelson{
+    font-size: 30px;
+    color: white;
+    margin: 20%;
+}
