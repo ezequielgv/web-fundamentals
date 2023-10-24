@@ -1,10 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@400;500&display=swap');
 /* Labels */
 :root {
-    --primary-color: #0077B6;
-    --secondary-color: #03045E;
-    --accent1-color: #00B4D8;
-    --accent2-color: #90E0EF; 
+    /* Color Basics */
+    --primary-color: #08bdbd; /*I used it */
+    --secondary-color: #1162BD; /*I used it */
+    --accent2-color: #90E0EF; /*I used it */
+    --var-color-white: #f7f7f7;
+
+    /* Opacity */
+    --var-color-white-25: #f7f7f7e0;
+    --var-color-white-50: #f7f7f7af;
+
+    --accent2-color-25: #90e1efe0;
+    --accent2-color-50: #90e1ef88;
+
+    /* Colors letters */
     --var-text-color-white: #f7f7f7;
     --var-text-color-black: #000000;
 }
@@ -22,24 +32,22 @@ body {
 
 header { 
     background-color: var(--primary-color);
-    padding: 15px;
     position: fixed;
-    height: 75px;
     width: 100%;
-    left: 0;
-    top: 0;
+    display: grid;
+    grid-template-columns: 150px auto 150px;
+    z-index: 5;
 }
 
 nav {
-    text-align: center;
-    padding: 0;
-    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-nav a {
-    text-align: center;
+nav a { 
+    padding-left: 15px;
     text-decoration: none;
-    padding: 10px;
 }
 
 a:hover {
@@ -51,13 +59,18 @@ h2 { margin: 0; }
 
 h4 {
     font-family: 'Roboto', 'Open Sans', sans-serif;
-    color: #0077B6; 
+    color: var(--var-text-color-black);
+    margin-bottom: 40px;
+    padding: 10px;
 }
 
 footer { 
     background-color: var(--primary-color);
     padding: 25px 50px;
     margin-top: 200px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 footer a {
@@ -72,22 +85,55 @@ footer a:hover {
 
 footer p { font-size: 1.2em; }
 footer p a:hover { text-decoration: underline; }
-
-footer .social img {padding-top: 15px;}
+footer .social img {
+    padding-top: 15px;
+}
 
 /* hashtags */
+#hero {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    z-index: -1;
+}
+
+#hero-box{
+    grid-column: 1/4;
+    grid-row: 1/3;
+}
+
+#hero-overlay{
+    width: 100%;
+    height: 100%;
+    grid-column: 1/4;
+    grid-row: 1/3;
+    background-color: var(--accent2-color-50);
+    z-index: 0;
+}
 #hero-img {
     width: 100%;
 }
-#hero-msg h1, #hero-msg h4 { text-align: center; }
+
+#hero-msg{
+    margin-top: 150px;
+    grid-column: 2/3;
+    grid-row: 1/2;
+    z-index: 1;
+}
+#hero-msg h1, #hero-msg h4 {
+    text-align: center;
+}
 
 #background {
     height: 725px;
-    background-color: #03045E;
+    background-color: var(--accent2-color);
+    grid-column: 1/11; 
+    grid-row: 4/9;
 }
 
 #logo_link {
-    padding-top: 5px;
+    justify-self: center;
+    align-self: center;
+    padding-bottom: 5px;
 }
 
 /* Classes */
@@ -106,20 +152,67 @@ footer .social img {padding-top: 15px;}
     margin-top: 50px;
     border-radius: 10px;
     border: 2px solid var(--secondary-color);
+    transition: transform .5s;
+    box-shadow: 5px 5px 10px #6f7364;
 }
 
 .book:hover, .join:hover { 
     background-color: var(--secondary-color);
     color: var(--var-text-color-white);
+    opacity: .9;
+    transform: scale(1.1);
 }
 
-.rivers-card, .camping-card, .rapids-card {margin: 200px 0;}
-.card-img { border: 10px solid var(--accent2-color); }
+.home-grid{
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+}
 
-.msg { 
-    background-color: #90E0EF; 
+.card-img{ 
+    border: 10px solid var(--secondary-color);
+    border-radius: 10px;
+    width: 100%;
+    transition: transform .5s;
+    box-shadow: 5px 5px 10px #6f7364;
+}
+
+.card-img:hover {
+    opacity: .6;
+    transform: scale(1.1);
+}
+
+.rivers-card{
+    grid-column: 2/4;
+    grid-row: 2/3;
+    margin: 200px 0;
+} 
+
+.camping-card{
+    grid-column: 5/7;
+    grid-row: 2/3;
+    margin: 200px 0;
+} 
+
+.rapids-card{
+    grid-column: 8/10;
+    grid-row: 2/3;
+    margin: 200px 0;
+}
+
+.mountains{
+    grid-column: 2/7;
+    grid-row: 5/8;
+    box-shadow: 5px 5px 10px #6f7364;
+}
+
+.msg {
+    background-color: var(--var-color-white-50);
     line-height: 1.5em;
     padding: 35px;
+    grid-column: 6/10;
+    grid-row: 6/7;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px #6f7364;
 }
 
 .msg h2 {
@@ -136,20 +229,55 @@ footer .social img {padding-top: 15px;}
 .home-title {
     font-family: 'Roboto', 'Open Sans', sans-serif;
     font-size: 2em;
-    color: var(--primary-color);
-    margin-top: 10px;
+    color: var(--var-text-color-black);
 }
 
 /* Color Classes*/
 .text-color-white{ color: var(--var-text-color-white); }
-
 .text-color-black{ color: var(--var-text-color-black); }
 
-/* .btn {
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
-    border: #00B4D8 solid 1.5px;
-    border-radius: 15px;
-    padding: 5px;
-    margin-top: 5px !important;
-    margin-bottom: 5px !important;
-} */
+@media screen and (max-width: 900px) {
+    #hero, .home-grid {
+        display: block;
+        height: auto;
+    }
+    header{
+        position: static;
+    }
+    nav, footer {
+        flex-direction: column;
+    }
+    nav a {
+        display: block;
+        padding: 15px;
+    }
+    #hero {
+        margin-top: 0;
+    }
+    #hero-msg {
+        margin-top: 0;
+    }
+    #hero-msg h4 {
+        display: none;
+    }
+    .home-title {
+        font-size: 25px;
+        color: #6f7364;
+    }
+    .rivers-card, .camping-card, .rapids-card { 
+        margin: 50px auto;
+        width: 60%;
+    }
+    #background {
+        display: none;
+    }
+    .mountains, .msg {
+        width: 80%;
+        display: block;
+        margin: 0 auto;
+        border-radius: 0;
+    }
+    footer {
+        margin-top: 25px;
+    }
+}
