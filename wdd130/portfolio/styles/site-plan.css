@@ -81,7 +81,9 @@ p {
   width: 25%;
   height: 3em;
 }
-
+.text-white{
+  color: var(--accent2-color);
+}
 .primary {
   background-color: var(--primary-color);
 }
