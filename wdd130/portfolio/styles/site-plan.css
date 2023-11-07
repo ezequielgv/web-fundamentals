@@ -61,11 +61,24 @@ header {
 header > h1, header > h2 {
   color: var(--headline-color-on-color);
 }
-
 p {
   font-family: var(--paragraph-font);
   color: var(--paragraph-color-on-white);
   padding: 1em;
+}
+.img-page-2{
+  height: 250px;
+  width: 375px;
+  padding-top: 10px;
+}
+.img-page-3{
+  height: 250px;
+  width: 375px;
+  padding-top: 10px;
+}
+.img-small{
+  height: 175px;
+  width: 175px;
 }
 .colors {
   width: 100%;
