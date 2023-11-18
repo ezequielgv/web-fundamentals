@@ -255,7 +255,6 @@ footer .social img {
     grid-column: 2/4;
     grid-row: 2/3;
     height: 250px;
-    width: 250;
     border: var(--secondary-color) 3px solid;
     border-radius: 15px;
 }
@@ -288,7 +287,7 @@ footer .social img {
     grid-column: 1/13;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 15%, auto;
+    grid-template-rows: 15% auto;
 }
 
 .info-bring-title{
