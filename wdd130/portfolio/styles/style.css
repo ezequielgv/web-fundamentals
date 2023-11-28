@@ -69,7 +69,7 @@ footer{
 /* ---- INDEX ---- */
 .main-index {
     display: grid;
-    grid-template-rows: 100%, 500px, 500px;
+    grid-template-rows: 100vh 150px 500px;
 }
 
 .about-titles{ color: var(--color-accent-1);}
